@@ -1,4 +1,3 @@
-<script type="text/javascript">
 $(document).ready(function(){
         var hc = $('h4').length;
 
@@ -48,5 +47,3 @@ $(function(){
       };
     });
 });
-
-</script>
