@@ -1,0 +1,44 @@
+/* <system section="theme" selected="alpha2"> */
+@import url("/css/theme/alpha2/alpha2.css");
+/* </system> */
+#container{
+   width:1080px;
+}
+#box2{
+    width:300px;
+}
+
+/**
+ * サイドバーのカテゴリーモジュール
+ */
+div.hatena-module-category div.hatena-module-body ul li a {
+    color : #ffffff;    /* 文字色 */
+}
+div.hatena-module-category div.hatena-module-body ul li {
+    padding:0.5em;
+    display: inline-block; /* 横並びに変更 */
+    border-radius: 6px;
+    line-height: 10px;
+    transition: none;
+    background-color: #7d9ab7; /* お好きな色に */
+    margin-top: 0.5em; /* 要素の間隔調整 */
+}
+div.hatena-module-category div.hatena-module-body ul li:hover {
+    background-color: #7d9ab7; /* お好きな色に */
+}
+
+/**
+ * 目次リスト
+ */
+.index-list{
+   background-color: #f3f3f3;
+   border-radius: 8px;        /* CSS3草案 */
+   -webkit-border-radius: 8px;    /* Safari,Google Chrome用 */
+   -moz-border-radius: 8px;   /* Firefox用 */
+   padding:16px;
+ }
+.index-list h2{
+  font-size:80%;
+  line-height:0;
+  padding: 0 0 1em 0;
+}
