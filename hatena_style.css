@@ -65,6 +65,9 @@ div.hatena-module-category div.hatena-module-body ul li:hover {
  .recomend li:nth-child(3){
    margin-right:0;
  }
+.recomend li p{
+  font-size:80%;
+}
 
  .imgP img{
    width: 170px;
