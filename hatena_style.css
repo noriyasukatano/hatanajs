@@ -49,6 +49,10 @@ div.hatena-module-category div.hatena-module-body ul li:hover {
  .recomend{
    width:560px;
  }
+ .recomend ul{
+   margin:0;
+   padding:0;
+ }
  .recomend li{
    display: inline-block;
    vertical-align: top;

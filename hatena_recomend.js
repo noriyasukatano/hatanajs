@@ -19,8 +19,9 @@ $.ajax({
 										var elimg = el.find("enclosure").attr("url");
 
                     htmlstr += '<li class="section">';
+                    htmlstr += '<a href="' + el.find("link").text() + '" title="' + el.find("title").text() + '" target="_blank">';
                     htmlstr += '<p class="imgP"><img src="' + elimg + '" alt="" width="170" ></p>';
-                    htmlstr += '<a href="' + el.find("link").text() + '" title="' + el.find("title").text() + '" target="_blank">' + el.find("title").text() + ' - ' + el.find("category").text() + '</a>';
+                    htmlstr += '<p>' + el.find("title").text() + ' - ' + el.find("category").text() + '</p></a>';
                     htmlstr += '</li>';
 										if(i === 5) {
 											// 表示件数の設定
