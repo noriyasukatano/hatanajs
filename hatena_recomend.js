@@ -1,40 +1,39 @@
-/* $.get("http://noriyasu-katano.hatenablog.com/rss", function (data) {
-    $(data).find("item").each(function () {
-        var el = $(this);
-          console.log(el.find("link").text());
-          console.log(el.find("title").text());
-    });
-}); */
 
 $.ajax({
+		//はてなrssファイルを読み込む
+		//ブログのアドレスの最後にrssをつける
      url:'http://noriyasu-katano.hatenablog.com/rss',
      success: function(data){
 
-          var rss_url = 'http://noriyasu-katano.hatenablog.com/rss';
+			 		//はてなrssの読み込み
+					var rss_url = 'http://noriyasu-katano.hatenablog.com/rss';
 
           var htmlstr = "";
-          htmlstr += '<h2>アクアリウムWiki 相互RSS</h2>';
-          htmlstr += '<div class="all_body">';
+					htmlstr += '<div class="recomend">';
+          htmlstr += '<h2>関連記事</h2>';
           htmlstr += '<ul>';
 
+					//アイテムの調整
           $.get(rss_url, function(data) {
-               $(data).find("item").each(function (i) { // or "entry"
+               $(data).find("item").each(function (i) {
                     var el = $(this);
+										var elimg = el.find("enclosure").attr("url");
 
-                    var oddeven = ( i % 2 == 0 ) ? 'lieven' : 'liodd'; //oddとevenを付けるため。三項演算子
-                    htmlstr += '<li class="' + oddeven + '">';
-                    //htmlstr += '<img src="http://www.google.com/s2/favicons?domain=' + el.find("link").text() + '">';
-                    htmlstr += '<a href="' + el.find("link").text() + '" title="' + el.find("title").text() + '" rel="nofollow" target="_blank">' + el.find("title").text() + ' - ' + el.find("category").text() + '</a>';
+                    htmlstr += '<li class="section">';
+                    htmlstr += '<p class="imgP"><img src="' + elimg + '" alt="" width="170" ></p>';
+                    htmlstr += '<a href="' + el.find("link").text() + '" title="' + el.find("title").text() + '" target="_blank">' + el.find("title").text() + ' - ' + el.find("category").text() + '</a>';
                     htmlstr += '</li>';
-
+										if(i === 5) {
+											// 表示件数の設定
+											return false;
+										};
                });
 
           htmlstr += '</ul>';
           htmlstr += '</div>';
 
-          var container = document.getElementById("aq_feed");
-          container.innerHTML = htmlstr;
-
+          //footer前に挿入する
+					$('footer').before(htmlstr);
           });
      }
 });

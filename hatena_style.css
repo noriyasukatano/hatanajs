@@ -42,3 +42,28 @@ div.hatena-module-category div.hatena-module-body ul li:hover {
   line-height:0;
   padding: 0 0 1em 0;
 }
+
+/**
+ * 関連記事
+ */
+ .recomend{
+   width:560px;
+ }
+ .recomend li{
+   display: inline-block;
+   vertical-align: top;
+   width:170px;
+   margin-right:15px;
+   list-style: none;
+   padding: 0;
+   margin-bottom: 20px;
+ }
+ .recomend li:nth-child(3){
+   margin-right:0;
+ }
+
+ .imgP img{
+   width: 170px;
+   height: 100px;
+   overflow: hidden;
+ }
